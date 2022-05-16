@@ -18,9 +18,15 @@ function App() {
   useEffect(() => {}, []);
 
   const consultaAPI = async () => {
-    const respuesta = await fetch("http://localhost:3004/productos");
-    const datos = await respuesta.json();
-    console.log(datos);
+    try {
+      //todo el codigo que quiero ejecutar
+      const respuesta = await fetch("http://localhost:3004/productos");
+      const datos = await respuesta.json();
+      //console.log(datos);
+      setProductos(datos);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -31,7 +37,7 @@ function App() {
         <Route
           exact
           path="/productos"
-          element={<ListaProductos></ListaProductos>}
+          element={<ListaProductos productos={productos}></ListaProductos>}
         ></Route>
         <Route
           exact
