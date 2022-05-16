@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Footer extends Component {
-    render() {
-        return (
-            <footer className='bg-dark text-light text-center py-4'>
+const Footer = () => {
+    return (
+        <div>
+          <footer className='bg-dark text-light text-center py-4'>
                 <p>&copy; Todos los derechos reservados</p>
-            </footer>
-        );
-    }
-}
+            </footer>  
+        </div>
+    );
+};
 
 export default Footer;

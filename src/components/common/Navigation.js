@@ -7,7 +7,7 @@ class Navigation extends Component {
     return (
       <Navbar bg="primary" expand="lg" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">CRUD Cafe</Navbar.Brand>
+        <Link to='/' className='navbar-brand'>CRUD Cafe</Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">

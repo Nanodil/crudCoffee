@@ -8,8 +8,21 @@ import Footer from "./components/common/Footer";
 import Error404 from "./components/pages/Error404";
 import AgregarProducto from "./components/productos/AgregarProducto";
 import EditarProducto from "./components/productos/EditarProducto";
+import { useState, useEffect } from "react";
 
 function App() {
+  //declarar variables
+  const URL = process.env.REACT_APP_API_URL;
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {}, []);
+
+  const consultaAPI = async () => {
+    const respuesta = await fetch("http://localhost:3004/productos");
+    const datos = await respuesta.json();
+    console.log(datos);
+  };
+
   return (
     <Router>
       <Navigation />
