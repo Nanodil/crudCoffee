@@ -15,7 +15,11 @@ function App() {
   const URL = process.env.REACT_APP_API_URL;
   const [productos, setProductos] = useState([]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    consultaAPI();
+  }, []);
+
+
 
   const consultaAPI = async () => {
     try {
