@@ -1,70 +1,22 @@
 {
   "productos": [
     {
-      "id": 2,
-      "nombreProducto": "Medialuna",
-      "precioProducto": "20",
-      "categoria": "dulce"
+      "nombreProducto": "alfajores de maicena",
+      "precioProducto": "21",
+      "categoria": "salado",
+      "id": 3
     },
     {
-      "id": 3,
-      "nombreProducto": "café",
-      "precioProducto": "40",
-      "categoria": "bebida-caliente"
-    },
-    {
-      "nombreProducto": "submarino",
-      "precioProducto": "50",
-      "categoria": "bebida-caliente",
-      "id": 4
-    },
-    {
-      "nombreProducto": "te",
-      "precioProducto": "30",
-      "categoria": "bebida-caliente",
+      "nombreProducto": "licuado de frutilla",
+      "precioProducto": "43",
+      "categoria": "bebida-fria",
       "id": 5
     },
     {
-      "nombreProducto": "alfajores de maicena",
-      "precioProducto": "25",
-      "categoria": "dulce",
-      "id": 6
-    },
-    {
-      "nombreProducto": "alfajor de chocolate",
-      "precioProducto": "25",
+      "nombreProducto": "medialunas",
+      "precioProducto": "43",
       "categoria": "dulce",
       "id": 7
-    },
-    {
-      "nombreProducto": "brownie",
-      "precioProducto": "30",
-      "categoria": "dulce",
-      "id": 8
-    },
-    {
-      "nombreProducto": "pan",
-      "precioProducto": "26",
-      "categoria": "salado",
-      "id": 9
-    },
-    {
-      "nombreProducto": "licuado",
-      "precioProducto": "50",
-      "categoria": "bebida-fria",
-      "id": 10
-    },
-    {
-      "nombreProducto": "licuado de banana",
-      "precioProducto": "120",
-      "categoria": "bebida-fria",
-      "id": 11
-    },
-    {
-      "nombreProducto": "submarino",
-      "precioProducto": "43",
-      "categoria": "bebida-caliente",
-      "id": 12
     }
   ]
 }

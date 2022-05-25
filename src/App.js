@@ -18,7 +18,7 @@ function App() {
 
   useEffect(()=>{
     consultaAPI();
-  },[]);
+  },);
 
   const consultaAPI = async() =>{
     try{
@@ -31,14 +31,13 @@ function App() {
       console.log(error);
     }
   }
-  
 
   return (
     <Router>
       <Navigation/>
       <Routes>
         <Route exact path='/' element={<Inicio></Inicio>}></Route>
-        <Route exact path='/productos' element={<ListaProductos productos={productos}></ListaProductos>}></Route>
+        <Route exact path='/productos' element={<ListaProductos productos={productos} consultaAPI={consultaAPI}></ListaProductos>}></Route>
         <Route exact path='/productos/nuevo' element={<AgregarProducto consultaAPI={consultaAPI}></AgregarProducto>}></Route>
         <Route exact path='/productos/editar' element={<EditarProducto></EditarProducto>}></Route>
         <Route exact path='*' element={<Error404></Error404>}></Route>
@@ -49,4 +48,3 @@ function App() {
 }
 
 export default App;
-

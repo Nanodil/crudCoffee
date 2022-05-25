@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Container, Alert } from "react-bootstrap";
 import { campoRequerido, rangoNumero } from "../helpers/helpers";
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
 
 const AgregarProducto = (props) => {
@@ -11,8 +11,8 @@ const AgregarProducto = (props) => {
   const [error, setError] = useState(false);
   const URL = process.env.REACT_APP_API_URL;
   const navigation = useNavigate();
-
-  const handleSubmit = async (e) => {
+ 
+  const handleSubmit = async(e) => {
     e.preventDefault();
     //validar los datos del form
     if (
@@ -26,41 +26,42 @@ const AgregarProducto = (props) => {
       const productoNuevo = {
         nombreProducto,
         precioProducto,
-        categoria,
-      };
-
+        categoria
+      }
       //console.log(productoNuevo);
-      try {
-        const parametros = {
+      try{
+        const parametros={
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/json"
           },
-          body: JSON.stringify(productoNuevo),
-        };
-        const respuesta = await fetch(URL, parametros);
-        console.log(respuesta);
-        if (respuesta.status === 201) {
-          console.log("el producto se creo correctamente");
-          //mostrar carte al usuario
-          Swal.fire(
-            "Producto creado",
-            "Su producto fue agregado correctamente",
-            "success"
-          );
-          //resetear el formulario
-          e.target.reset();
-          //volver a consultar la API
-          props.consultaAPI();
-          //redireccionar a la pagina de lista de productos
-          navigation("/productos");
-        } else {
-          console.log("mostrar un cartel de error");
+          body: JSON.stringify(productoNuevo)
         }
-      } catch (error) {
+        const respuesta = await fetch(URL,parametros)
+        console.log(respuesta);
+        if(respuesta.status === 201){
+          console.log('el producto se creo correctamente')
+          //mostrar cartel al usuario
+          Swal.fire(
+            'Producto creado',
+            'Su producto fue agregado correctamente',
+            'success'
+          )
+          //resetear el formulario
+            e.target.reset();
+          // volver a consultar la api
+            props.consultaAPI();
+          //redireccion a la pagina de lista de productos
+            navigation('/productos');
+        }else{
+          console.log('mostrar un cartel de error')
+        }
+      }catch(error){
         console.log(error);
       }
+     
     } else {
+ 
       //mostrar al usuario un cartel error si algo salio mal
       setError(true);
     }
@@ -102,11 +103,9 @@ const AgregarProducto = (props) => {
           Guardar
         </Button>
       </Form>
-      {error === true ? (
-        <Alert variant="danger">
-          Debe cargar todos los datos y el precio debe estar entre 1 y $4999.
-        </Alert>
-      ) : null}
+     { error === true ? <Alert variant='danger'>
+        Debe cargar todos los datos y el precio debe estar entre 1 y $4999.
+      </Alert>: null}
     </Container>
   );
 };
