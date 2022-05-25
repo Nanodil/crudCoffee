@@ -1,6 +1,7 @@
 import React from "react";
 import { ListGroup, Button } from "react-bootstrap";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const ItemProducto = (props) => {
   const URL = process.env.REACT_APP_API_URL + "/" + props.producto.id;
@@ -54,7 +55,9 @@ const ItemProducto = (props) => {
         </span>
       </p>
       <div>
-        <Button variant="warning">Editar</Button>
+        <Link className="btn btn-warning me-2" to={`/productos/editar/${props.producto.id}`}>
+          Editar
+        </Link>
         <Button variant="danger" onClick={() => eliminarProducto()}>
           Borrar
         </Button>
